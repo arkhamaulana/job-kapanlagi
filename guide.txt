@@ -1,0 +1,8 @@
+- buat db di phpmyadmin
+- cp .enx.example .env
+- isi .env nama database user dan password
+- lakukan composer update
+- php artisan key:generate
+- php artisan migrate
+- php artisan db:seed
+- buka DataController, ubah line 23, 29, 80 /xampp2/htdocs/kapanlagi => sesuaikan dengan direktori yang dimiliki
