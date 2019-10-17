@@ -114,10 +114,17 @@ class DataController extends Controller
     public function delete($id) {
 
       $file_txt = substr($id, 5, -4);
+      $file_txt_null = substr($id, 0, -4);
 
-      Storage::delete($file_txt.'.txt');
+      $cek_name_file = substr($id, -4);
 
-      File::delete('image/' . $id);
+      if($cek_name_file == 'NULL') {
+        Storage::delete($file_txt_null.'.txt');
+      } else {
+        Storage::delete($file_txt.'.txt');
+
+        File::delete('image/' . $id);
+      }
 
       return redirect()->back()->with('alert-danger', 'Data berhasil dihapus!');
 

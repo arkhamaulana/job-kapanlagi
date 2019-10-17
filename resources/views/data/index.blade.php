@@ -61,11 +61,19 @@
 	                                            Update
 	                                        </button>
 										</a>
-	                                    <a href="{{ url('data_user/delete', $data['image_path']) }}">
-	                                        <button class="btn btn-danger" onclick="return confirm('Are you sure want to delete this Data?')">
-	                                            Delete
-	                                        </button>
-	                                    </a>
+                                        @if($data['image_path'] == 'NULL')
+                                            <a href="{{ url('data_user/delete', $data['name_file'].'NULL') }}">
+                                                <button class="btn btn-danger" onclick="return confirm('Are you sure want to delete this Data?')">
+                                                    Delete {{ $data['name_file'].'NULL' }}
+                                                </button>
+                                            </a>
+                                        @else
+                                            <a href="{{ url('data_user/delete', $data['image_path']) }}">
+                                                <button class="btn btn-danger" onclick="return confirm('Are you sure want to delete this Data?')">
+                                                    Delete {{ $data['image_path'] }}
+                                                </button>
+                                            </a>
+                                        @endif
 									@else
 										<a href="{{ url('/data_user/detail', $data['name_file']) }}">
 											<button class="btn btn-primary">
