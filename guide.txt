@@ -1,8 +1,11 @@
-- buat db di phpmyadmin
-- cp .enx.example .env
-- isi .env nama database user dan password
-- lakukan composer update
-- php artisan key:generate
-- php artisan migrate
-- php artisan db:seed
-- buka DataController, ubah line 23, 29, 80 /xampp2/htdocs/kapanlagi => sesuaikan dengan direktori yang dimiliki
+- Download project dan pindahkan ke folder xampp/htdocs atau clone project
+- Buat Database baru pada PhpMyAdmin
+- Masuk folder project yang sudah didownload/clone
+- Jalankan command berikut untuk mengcopy file .env "cp .env.example .env"
+- Buka file .env yang sudah dicopy, isi DB_DATABASE dengan nama database yang sudah dibuat, untuk default DB_USERNAME=root DB_PASSWORD=
+- Jalankan command "composer update"
+- Jalankan command "php artisan key:generate" untuk mengenerate key pada project laravel
+- Jalankan command "php artisan migrate" untuk migrasi tabel ke database yang telah dibuat
+- Jalankan command "php artisan db:seed" untuk membuat user untuk login, untuk login bisa menggunakan Email = admin@kapanlagi.com & Password = admin
+- Untuk penyesuaian buka file DataController.php (xampp\htdocs\sesuai_nama_project\app\Http\Controllers...) ubah line 23, 29, 80 menjadi /xampp/htdocs/sesuai_nama_project => sesuaikan dengan nama folder yang sudah dibuat
+- Jalankan project pada browser contoh: http://localhost/sesuai_nama_project/public/
