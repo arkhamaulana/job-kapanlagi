@@ -86,7 +86,11 @@ class DataController extends Controller
     }
 
     public function update(Request $request) {
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> dd2b38f510284fe0e7d1023295493bd3bec39faa
       $name = $request['name'];
       $email = $request['email'];
       $birthday = $request['birthday'];
