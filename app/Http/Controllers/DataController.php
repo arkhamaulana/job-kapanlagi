@@ -86,6 +86,10 @@ class DataController extends Controller
     }
 
     public function update(Request $request) {
+        
+      request()->validate([
+        'photo' => 'image|mimes:jpg,png',
+      ]);
 
       $name = $request['name'];
       $email = $request['email'];
